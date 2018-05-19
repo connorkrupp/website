@@ -10,13 +10,10 @@ const ContentContainer = styled.div`
   max-width: 960px;
   padding: 0 1.0875rem 1.45rem;
   padding-top: 0;
-  display: flex;
-  align-items: center;
-  min-height: calc(100vh);
+  margin-top: 128px;
 `;
 
 const ContentCentered = styled.div`
-  margin-top: ${headerHeight};
 `;
 
 const Layout = ({ children, data }) => (
@@ -44,7 +41,7 @@ Layout.propTypes = {
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query NonCenteredLayoutQuery {
     site {
       siteMetadata {
         title

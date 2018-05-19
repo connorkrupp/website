@@ -20,6 +20,21 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 }
 
+exports.onCreatePage = async ({ page, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  return new Promise((resolve, reject) => {
+    if (page.path.match(/^\/stuff/)) {
+      page.layout = "non-centered";
+
+      // Update the page.
+      createPage(page);
+    }
+
+    resolve();
+  });
+};
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 

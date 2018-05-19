@@ -2,24 +2,31 @@ import React from 'react'
 import styled from 'styled-components';
 import Link from 'gatsby-link'
 
+const headerHeight = '128px';
+
 const Container = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
   marginBottom: 1.45rem;
+  height: ${headerHeight};
 `;
 
 const Content = styled.div`
   margin: 0 auto;
   maxWidth: 960px;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem;
   display: flex;
   justify-content: space-between;
 `;
 
-const NavigationLinks = styled.ul`
-  list-style: none;
+const NavigationLinks = styled.div`
   display: flex;
   font-size: 18px;
+  align-items: center;
 
-  li {
+  a {
     margin-left: 20px;
 
     &:first-child {
@@ -43,11 +50,14 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <NavigationLinks>
-        <li><Link to="/about">about</Link></li>
-        <li><Link to="/stuff">stuff</Link></li>
+        <Link to="/about">about</Link>
+        <Link to="/stuff">stuff</Link>
       </NavigationLinks>
     </Content>
   </Container>
 );
 
 export default Header;
+export {
+  headerHeight,
+};
