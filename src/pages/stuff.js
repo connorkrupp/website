@@ -28,11 +28,10 @@ const IndexPage = () => (
       desc="A machine learning based collage generator built natively for iOS"
       link="https://itunes.apple.com/us/app/picurate/id1323549717?mt=8"
     />
-    <Project
-      title="MLS Geocoder"
-      desc="Automatically tag real estate CSV data from MLS (Realcomp) with latitude, longitude, and containing Detroit neighborhood"
-      link="#"
-    />
+    <ProjectContainer>
+      <h3><Link to="/geocoder">MLS Geocoder</Link></h3>
+      <p>Automatically tag real estate CSV data from MLS (Realcomp) with latitude, longitude, and containing Detroit neighborhood</p>
+    </ProjectContainer>
     <Project
       title="Detroit Dataset Explorer"
       desc="Explore Detroit-based geographical datasets in powerful detail with custom statistics and visualizations"
